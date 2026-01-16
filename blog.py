@@ -30,8 +30,9 @@ SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
 
 # OAuth 토큰 / 클라이언트 시크릿을 스크립트 위치 기준으로 관리 (작업 폴더 바뀌어도 안정)
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-TOKEN_PATH = os.path.join(SCRIPT_DIR, "token_drive.json")
-CLIENT_SECRET_PATH = os.path.join(SCRIPT_DIR, "client_secret.json")
+TOKEN_PATH = r"C:\Users\user\.secrets\blog\token_drive.json"
+CLIENT_SECRET_PATH = r"C:\Users\user\.secrets\blog\client_secret.json"
+
 
 
 # =========================
