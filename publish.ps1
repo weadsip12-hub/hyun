@@ -1,17 +1,29 @@
 # publish.ps1
-# - blog.py 실행해서 글 생성/목록 갱신
+# - venv의 python.exe로 blog.py를 실행 (venv 활성화 안 해도 됨)
 # - 변경된 파일이 있을 때만 commit/push
 # - 에러 나면 바로 중단
 
 $ErrorActionPreference = "Stop"
 
-Write-Host "== 1) Run blog generator =="
+# 이 스크립트가 있는 폴더(=레포 루트)
+$ROOT = $PSScriptRoot
 
-python .\blog.py
+# venv python 경로
+$PY = Join-Path $ROOT "venv\Scripts\python.exe"
+
+if (!(Test-Path $PY)) {
+    Write-Host "ERROR: venv가 없습니다. 아래를 먼저 실행하세요:"
+    Write-Host "  python -m venv venv"
+    Write-Host "  .\venv\Scripts\Activate.ps1"
+    Write-Host "  pip install -r requirements.txt"
+    exit 1
+}
+
+Write-Host "== 1) Run blog generator (venv python) =="
+& $PY (Join-Path $ROOT "blog.py")
 
 Write-Host "== 2) Git status check =="
 
-# 변경사항 있는지 확인
 $changes = git status --porcelain
 
 if ([string]::IsNullOrWhiteSpace($changes)) {
@@ -25,7 +37,6 @@ Write-Host "== 3) Git add =="
 git add .
 
 Write-Host "== 4) Git commit =="
-# 커밋 메시지에 날짜/시간 넣기
 $timestamp = Get-Date -Format "yyyy-MM-dd HH:mm:ss"
 git commit -m "auto publish: $timestamp"
 
