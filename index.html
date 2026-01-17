@@ -8,45 +8,62 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background: #f4f7f6;
-            padding: 40px 20px;
-            color: #333;
+            padding: 36px 16px;
+            color: #111827;
             margin: 0;
         }
         .container {
-            max-width: 720px;
+            max-width: 860px;
             margin: 0 auto;
         }
         h1 {
-            border-bottom: 2px solid #3b82f6;
-            padding-bottom: 10px;
-            margin-bottom: 24px;
+            margin: 0 0 18px 0;
             font-size: 28px;
         }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 14px;
+        }
         .post-card {
+            display: block;
             background: white;
-            padding: 18px 18px;
-            margin-bottom: 14px;
-            border-radius: 14px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            transition: 0.2s;
+            border-radius: 16px;
+            overflow: hidden;
             border: 1px solid rgba(0,0,0,0.06);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
         }
         .post-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 18px rgba(0,0,0,0.10);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.10);
             border-color: rgba(59,130,246,0.5);
         }
-        .post-card a {
-            text-decoration: none;
-            color: #2563eb;
-            font-weight: 800;
+        .thumb {
+            aspect-ratio: 16 / 10;
+            background: #f3f4f6;
+        }
+        .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .info {
+            padding: 14px 14px 16px 14px;
+        }
+        .title {
+            font-weight: 900;
             font-size: 1.05rem;
-            display: inline-block;
-            margin-bottom: 6px;
+            color: #2563eb;
+            line-height: 1.25;
+            margin-bottom: 8px;
         }
         .meta {
             font-size: 12px;
-            color: #999;
+            color: #6b7280;
         }
         .empty {
             background: white;
@@ -58,7 +75,7 @@
         .footer {
             text-align: center;
             color: #888;
-            margin-top: 36px;
+            margin-top: 28px;
             font-size: 0.85rem;
         }
     </style>
@@ -66,43 +83,87 @@
 <body>
     <div class="container">
         <h1>📝 포스트 목록</h1>
-        
-        <div class="post-card">
-            <a href="1768579680804.html">오늘의 사진 기록</a>
-            <div class="meta">1768579680804.html</div>
-        </div>
-        
-
-        <div class="post-card">
-            <a href="1768579611890.html">오늘의 사진 기록</a>
-            <div class="meta">1768579611890.html</div>
-        </div>
-        
-
-        <div class="post-card">
-            <a href="1768579535207.html">오늘의 사진 기록</a>
-            <div class="meta">1768579535207.html</div>
-        </div>
+        <div class="grid">
+            
+        <a class="post-card" href="1768579680804.html">
+            
+            <div class="thumb">
+              <img loading="lazy" src="images/img_1768579680804_0.jpg" alt="thumbnail">
+            </div>
+            
+            <div class="info">
+                <div class="title">오늘의 사진 기록</div>
+                <div class="meta">2026-01-17 01:08 · 1768579680804.html</div>
+            </div>
+        </a>
         
 
-        <div class="post-card">
-            <a href="1768578307824.html">오늘의 사진 기록</a>
-            <div class="meta">1768578307824.html</div>
-        </div>
+        <a class="post-card" href="1768579611890.html">
+            
+            <div class="thumb">
+              <img loading="lazy" src="images/img_1768579611890_0.jpg" alt="thumbnail">
+            </div>
+            
+            <div class="info">
+                <div class="title">오늘의 사진 기록</div>
+                <div class="meta">2026-01-17 01:06 · 1768579611890.html</div>
+            </div>
+        </a>
         
 
-        <div class="post-card">
-            <a href="1768567655769.html">오늘의 사진 기록</a>
-            <div class="meta">1768567655769.html</div>
-        </div>
+        <a class="post-card" href="1768579535207.html">
+            
+            <div class="thumb">
+              <img loading="lazy" src="images/img_1768579535207_0.jpg" alt="thumbnail">
+            </div>
+            
+            <div class="info">
+                <div class="title">오늘의 사진 기록</div>
+                <div class="meta">2026-01-17 01:05 · 1768579535207.html</div>
+            </div>
+        </a>
         
 
-        <div class="post-card">
-            <a href="1768558395.html">오늘의 사진 기록</a>
-            <div class="meta">1768558395.html</div>
-        </div>
+        <a class="post-card" href="1768578307824.html">
+            
+            <div class="thumb">
+              <img loading="lazy" src="images/img_1768578307824_0.png" alt="thumbnail">
+            </div>
+            
+            <div class="info">
+                <div class="title">오늘의 사진 기록</div>
+                <div class="meta">2026-01-17 00:45 · 1768578307824.html</div>
+            </div>
+        </a>
         
-        <div class="footer">업데이트: 2026-01-17 01:08:07</div>
+
+        <a class="post-card" href="1768567655769.html">
+            
+            <div class="thumb">
+              <img loading="lazy" src="images/img_1768567655769_0.png" alt="thumbnail">
+            </div>
+            
+            <div class="info">
+                <div class="title">오늘의 사진 기록</div>
+                <div class="meta">2026-01-16 21:47 · 1768567655769.html</div>
+            </div>
+        </a>
+        
+
+        <a class="post-card" href="1768558395.html">
+            
+            <div class="thumb">
+              <img loading="lazy" src="images/img_1768558395_0.jpg" alt="thumbnail">
+            </div>
+            
+            <div class="info">
+                <div class="title">오늘의 사진 기록</div>
+                <div class="meta">1970-01-21 20:15 · 1768558395.html</div>
+            </div>
+        </a>
+        
+        </div>
+        <div class="footer">업데이트: 2026-01-17 17:54:37</div>
     </div>
 </body>
 </html>
