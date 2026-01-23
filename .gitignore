@@ -60,3 +60,6 @@ Thumbs.db
 
 # ✅ 옵션 B: 결과물도 Git에서 제외 (자동 배포용)
 # blog/
+
+# pipeline temp images
+blog/assets/images/incoming/

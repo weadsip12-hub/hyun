@@ -23,3 +23,4 @@ blog:
 
 git:
   branch: "master"
+  commit_message_template: "chore: publish {slug}"
