@@ -1,0 +1,8 @@
+Write a Korean blog post based on the photo captions JSON below.
+- Tone: friendly, not overconfident
+- Length: 6~10 short paragraphs
+- Include a short title line at the top (plain text, not markdown header)
+- Include a brief closing
+
+CAPTIONS_JSON:
+{{CAPTIONS_JSON}}

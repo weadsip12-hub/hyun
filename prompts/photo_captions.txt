@@ -1,0 +1,8 @@
+You will receive up to 4 photos. For each photo, write exactly 2 short lines in Korean.
+Return ONLY valid JSON in this exact schema:
+{
+  "images": [
+    { "index": 1, "line1": "...", "line2": "..." }
+  ]
+}
+Do not wrap in markdown. Do not add extra keys.
